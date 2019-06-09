@@ -6,52 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-    <!--<LinearLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="180dip"-->
-        <!--android:orientation="vertical">-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="60dip"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<Button-->
-                <!--android:id="@+id/btnLeft"-->
-                <!--android:layout_width="180dip"-->
-                <!--android:layout_height="60dip"-->
-                <!--android:text="left"/>-->
-
-            <!--<Button-->
-                <!--android:id="@+id/btnRight"-->
-                <!--android:layout_width="180dip"-->
-                <!--android:layout_height="60dip"-->
-                <!--android:text="right"/>-->
-
-        <!--</LinearLayout>-->
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="60dip"-->
-            <!--android:orientation="horizontal">-->
-
-            <!--<Button-->
-                <!--android:id="@+id/btnTop"-->
-                <!--android:layout_width="180dip"-->
-                <!--android:layout_height="60dip"-->
-                <!--android:text="top"/>-->
-
-            <!--<Button-->
-                <!--android:id="@+id/btnDown"-->
-                <!--android:layout_width="180dip"-->
-                <!--android:layout_height="60dip"-->
-                <!--android:text="down"/>-->
-
-        <!--</LinearLayout>-->
-
-    <!--</LinearLayout>-->
-
     <RelativeLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -67,31 +21,58 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/btnNew"
+                <Spinner
+                    android:id="@+id/sex_spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/NEW"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="2dp"
+                    android:layout_gravity="center"
+                    android:entries="@array/sex"/>
 
-                <Button
-                    android:id="@+id/btnChange"
+                <Spinner
+                    android:id="@+id/height_spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/CHANGE"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="2dp"
+                    android:entries="@array/height"/>
 
-                <Button
-                    android:id="@+id/btnSave"
+                <Spinner
+                    android:id="@+id/weight_spinner"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/SAVE"
-                    android:layout_margin="10dp"/>
+                    android:layout_margin="2dp"
+                    android:entries="@array/weight"/>
 
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btnAlbum"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginHorizontal="40dp"
+                    android:background="@drawable/album"/>
+
+                <Button
+                    android:id="@+id/btnCamera"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="@drawable/camera"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/picture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"/>
 
             <Button
                 android:id="@+id/btnLoadModel"
@@ -102,7 +83,7 @@
             <android.opengl.GLSurfaceView
                 android:id="@+id/surfaceView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="wrap_content"/>
 
         </LinearLayout>
 

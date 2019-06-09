@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -13,28 +13,35 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder>{
     private List<Cloth> mClothList;
     static class ViewHolder extends RecyclerView.ViewHolder{
         ImageView cImage;
-        TextView cName;
         public ViewHolder(View view){
             super(view);
             cImage=(ImageView)view.findViewById(R.id.cloth_image);
-            //cName=(TextView)view.findViewById(R.id.cloth_name);
+
         }
     }
     public MyAdapter(List<Cloth>clothList){
         mClothList=clothList;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
         View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.cloth_item,parent,false);
-        ViewHolder holder=new ViewHolder(view);
+        final ViewHolder holder=new ViewHolder(view);
+        holder.cImage.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                int position=holder.getAdapterPosition();
+                Cloth cloth=mClothList.get(position);
+                Toast.makeText(v.getContext(),cloth.getName(),Toast.LENGTH_SHORT).show();
+            }
+        });
         return holder;
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position){
-        Cloth cloth=mClothList.get(position);
+    public void onBindViewHolder(ViewHolder holder, int position) {
+        Cloth cloth = mClothList.get(position);
         holder.cImage.setImageResource(cloth.getImageId());
-        //holder.cName.setText(cloth.getName());
     }
 
     @Override

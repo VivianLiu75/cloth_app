@@ -101,15 +101,16 @@ public class RenderView implements GLSurfaceView.Renderer{
 
             Object3D[] objectsArray2 = Loader.loadOBJ(context.getResources().getAssets().open("policecar.obj"), context.getResources()
 
-                    .getAssets().open("policecar.mtl"), 1f);
+                    .getAssets().open("policecar.mtl"), 15f);
 
             newObject = Object3D.mergeAll(objectsArray2);
 
             newObject.setTexture("policecar_texture");
 
-            newObject.setOrigin(new SimpleVector(0, 0, 300));
+            newObject.setOrigin(new SimpleVector(0, 200, 300));
 
             newObject.rotateZ(3.1415926f);
+            newObject.rotateY(3.1415926f);
 
             newObject.setName("policecar.obj");
 
